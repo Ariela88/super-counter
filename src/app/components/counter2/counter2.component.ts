@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
 import { CounterService } from 'src/app/services/counter.service';
@@ -12,13 +12,23 @@ import { CounterService } from 'src/app/services/counter.service';
 })
 export class Counter2Component implements OnInit{
 
-  count: number = 0
-
-  constructor(private dataServ: DataService, private counter:CounterService) { }
+  constructor(private counter:CounterService){}
 
   ngOnInit(): void {
     this.counter.count.subscribe(v => this.count = v)
 }
 
+  count: number = 0
+  @Input() set increase2(valueContainer: any) {
+
+    this.count = this.count + valueContainer.value
+
+  }
+
+
+  @Input() set reset2(valueContainer: any) {
+    this.count = valueContainer.value;
+
+  }
 
 }

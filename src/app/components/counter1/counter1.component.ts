@@ -19,17 +19,12 @@ export class Counter1Component {
 
   count: number = 0
 
-
   @Input() set increase(valueContainer: any) {
-
-    this.count = this.count + valueContainer.value
-
-  }
+this.count = this.count + valueContainer.value}
 
 
   @Input() set reset(valueContainer: any) {
-    this.count = valueContainer.value;
+    this.count = valueContainer.value;}
 
-  }
 
 }

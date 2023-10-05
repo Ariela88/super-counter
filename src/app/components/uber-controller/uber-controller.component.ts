@@ -13,17 +13,12 @@ export class UberControllerComponent {
 
 constructor(private counter:CounterService){}
 
-
-
-  incrementAll(){
+incrementAll(){
 
     this.counter.increaseCount()
   }
 
-
-
-
-  resetAll(){
+resetAll(){
 
     this.counter.resetCount()
   }

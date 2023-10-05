@@ -1,18 +1,17 @@
 <div class="container">
   <div class="sub-container">
-    <app-controller1 (increase)="increaseCalled($event)" (reset)="resetCaller($event)"> </app-controller1>
-<app-counter1 [increase]="inc" [reset]="res"> </app-counter1>
+    <app-controller1 (increase)="increaseCalled($event,'counter1')" (reset)="resetCaller($event,'counter1')"></app-controller1>
+    <app-counter1 [increase]="incCounter1" [reset]="resCounter1"></app-counter1>
   </div>
   <div class="sub-container">
-    <app-controller2> </app-controller2>
-<app-counter2> </app-counter2>
+    <app-controller2 (increase)="increaseCalled($event,'counter2')" (reset)="resetCaller($event,'counter2')"></app-controller2>
+    <app-counter2 [increase2]="incCounter2" [reset2]="resCounter2"></app-counter2>
   </div>
   <div class="sub-container">
-    <app-controller3> </app-controller3>
-<app-counter3> </app-counter3>
+    <app-controller3 (increase)="increaseCalled($event,'counter3')" (reset)="resetCaller($event,'counter3')"></app-controller3>
+    <app-counter3 [increase3]="incCounter3" [reset3]="resCounter3"></app-counter3>
   </div>
 </div>
-
 
 <app-uber-controller>
 

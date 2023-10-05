@@ -6,8 +6,6 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
 
-
-
 increase= new Subject<number>();
 reset= new Subject<number>();
 

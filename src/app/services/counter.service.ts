@@ -16,8 +16,6 @@ export class CounterService {
 
   }
 
-
-
   resetCount() {
 
     this.count.next(0)

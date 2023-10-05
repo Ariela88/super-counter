@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CounterService } from 'src/app/services/counter.service';
 
@@ -13,14 +13,17 @@ export class Controller3Component {
 
   constructor(private counter:CounterService){}
 
-  incrementCounter(){
+  @Output() increase = new EventEmitter<number>()
+  @Output() reset = new EventEmitter<number>()
 
-    this.counter.increaseCount()
+  incrementCounter3(){
 
+    this.increase.emit(1);
   }
 
-  resetCounter(){
+  resetCounter3(){
+console.log('reset 3')
+    this.reset.emit(0)
 
-    this.counter.resetCount()
   }
 }

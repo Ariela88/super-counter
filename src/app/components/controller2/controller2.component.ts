@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
 
@@ -14,13 +14,17 @@ export class Controller2Component {
   constructor(private dataServ:DataService){}
 
 
-  incrementCounter(){
+  @Output() increase = new EventEmitter<number>()
+  @Output() reset = new EventEmitter<number>()
 
-    this.dataServ.increaseCount()
+  incrementCounter2(){
 
+    this.increase.emit(1);
   }
 
-  resetCounter(){
-this.dataServ.resetCount()
+  resetCounter2(){
+
+    this.reset.emit(0)
+
   }
 }
